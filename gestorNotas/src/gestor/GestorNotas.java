@@ -30,11 +30,13 @@ public class GestorNotas {
     }
 
     public double obtenerNotaMaxima() {
+        if (contador == 0) {
+            System.out.println("No hay notas registradas.");
+            return 0;
+        }
         double max = notas[0];
         for (int i = 1; i < contador; i++) {
-            if (notas[i] > max) {
-                max = notas[i];
-            }
+            if (notas[i] > max) max = notas[i];
         }
         return max;
     }
